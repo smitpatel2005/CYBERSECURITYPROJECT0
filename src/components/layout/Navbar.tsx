@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   ShieldCheck, 
-  Presentation, 
   Sun, 
   Moon, 
   Menu, 
@@ -18,7 +17,6 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ sidebarOpen, setSidebarOpen }) => {
   const { 
-    setExhibitionMode, 
     theme, 
     toggleTheme, 
     setActiveModule,
@@ -101,15 +99,6 @@ export const Navbar: React.FC<NavbarProps> = ({ sidebarOpen, setSidebarOpen }) =
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-400" />}
-          </button>
-
-          {/* Exhibition Mode Button */}
-          <button
-            onClick={() => setExhibitionMode(true)}
-            className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-medium text-xs sm:text-sm shadow-lg shadow-cyan-950/50 hover:shadow-cyan-500/25 transition-all border border-cyan-400/30"
-          >
-            <Presentation className="w-4 h-4 text-cyan-100" />
-            <span className="font-semibold">Exhibition Mode</span>
           </button>
         </div>
       </div>

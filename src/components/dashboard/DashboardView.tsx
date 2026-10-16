@@ -3,7 +3,6 @@ import { useApp } from '../../context/AppContext';
 import { AppModule } from '../../types';
 import { 
   KeyRound, 
-  Presentation, 
   Sparkles, 
   ChevronRight, 
   Globe,
@@ -13,7 +12,6 @@ import {
 export const DashboardView: React.FC = () => {
   const { 
     setActiveModule, 
-    setExhibitionMode, 
     getOverallStats,
     language
   } = useApp();
@@ -101,11 +99,11 @@ export const DashboardView: React.FC = () => {
             </button>
 
             <button
-              onClick={() => setExhibitionMode(true)}
+              onClick={() => setActiveModule('password-checker')}
               className="px-5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 font-semibold text-xs sm:text-sm border border-slate-800 transition-colors flex items-center gap-2"
             >
-              <Presentation className="w-4 h-4 text-amber-400" />
-              <span>{language === 'gu' ? 'એક્ઝિબિશન મોડ' : 'Exhibition Mode'}</span>
+              <KeyRound className="w-4 h-4 text-amber-400" />
+              <span>{language === 'gu' ? 'પાસવર્ડ એનાલાઇઝર' : 'Password Analyzer'}</span>
             </button>
           </div>
         </div>
