@@ -36,7 +36,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
       label: language === 'gu' ? 'કમ્પ્યુટર હાર્ડવેર' : 'Computer Hardware', 
       icon: Cpu, 
       section: 'Hardware Lab', 
-      badge: '11 Devices' 
+      badge: language === 'gu' ? '10 સાધનો' : '10 Devices' 
     },
 
     // Cybersecurity Suite

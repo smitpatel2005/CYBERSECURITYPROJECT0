@@ -142,22 +142,22 @@ export const ExhibitionModeView: React.FC = () => {
     {
       stepNumber: 4,
       title: 'Computer Hardware Architecture & Learning Lab',
-      subtitle: '11 Essential Devices, Bilingual Gujarati/English Support & System Flow',
+      subtitle: '10 Essential Devices, Bilingual Gujarati/English Support & System Flow',
       badge: 'Hardware Education',
       icon: Cpu,
       content: (
         <div className="space-y-6 text-slate-300">
           <p className="text-base sm:text-lg leading-relaxed text-slate-200">
-            A comprehensive, beginner-friendly learning module covering all 11 core computer hardware components with instant toggle between English and natural Gujarati (ગુજરાતી).
+            A comprehensive, beginner-friendly learning module covering all 10 core computer hardware components with instant toggle between English and natural Gujarati (ગુજરાતી).
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
             <div className="p-4 rounded-xl bg-slate-900 border border-cyan-500/30 space-y-1">
-              <strong className="text-cyan-400 block uppercase">1. 11 Hardware Devices</strong>
-              <p className="text-slate-400">RAM, HDD, SSD, Motherboard, SMPS, CPU, Processor, Monitor, Mouse, Keyboard, and Cabinet with full specs and real-life analogies.</p>
+              <strong className="text-cyan-400 block uppercase">1. 10 Hardware Devices</strong>
+              <p className="text-slate-400">RAM, HDD, SSD, Motherboard, SMPS, CPU (Processor), Monitor, Mouse, Keyboard, and Cabinet with full specs and real-life analogies.</p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-blue-500/30 space-y-1">
-              <strong className="text-blue-400 block uppercase">2. CPU vs Processor Clarification</strong>
-              <p className="text-slate-400">Clearly clarifies that CPU stands for Central Processing Unit and IS the computer processor, distinguishing functional execution from silicon architecture.</p>
+              <strong className="text-blue-400 block uppercase">2. CPU / Processor Core</strong>
+              <p className="text-slate-400">Combines instruction execution and silicon microarchitecture, explaining cores, clock speeds, and Intel/AMD Ryzen/ARM architectures.</p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-emerald-500/30 space-y-1">
               <strong className="text-emerald-400 block uppercase">3. Flow & Mastery Quiz</strong>
@@ -165,7 +165,7 @@ export const ExhibitionModeView: React.FC = () => {
             </div>
           </div>
           <p className="text-xs text-slate-400">
-            Click "Jump to Module" below to explore all 11 components and toggle language in real-time.
+            Click "Jump to Module" below to explore all 10 components and toggle language in real-time.
           </p>
         </div>
       ),

@@ -415,16 +415,16 @@ export const HARDWARE_DEVICES: HardwareDevice[] = [
   {
     id: 'cpu',
     name: { en: 'CPU (Processor)', gu: 'CPU (પ્રોસેસર)' },
-    fullForm: { en: 'Central Processing Unit', gu: 'સેન્ટ્રલ પ્રોસેસિંગ યુનિટ (Central Processing Unit)' },
+    fullForm: { en: 'Central Processing Unit / Processor', gu: 'સેન્ટ્રલ પ્રોસેસિંગ યુનિટ (CPU / Processor)' },
     category: ['internal'],
-    image: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80',
     fallbackSvgType: 'cpu',
     shortDefinition: {
-      en: 'The CPU (Central Processing Unit) is the electronic brain of the computer that interprets and executes all software instructions.',
-      gu: 'CPU (સેન્ટ્રલ પ્રોસેસિંગ યુનિટ) એ કમ્પ્યુટરનું મગજ છે, જે તમામ સોફ્ટવેર સૂચનાઓ વાંચીને ગણતરી અને પરિણામ આપે છે.'
+      en: 'The CPU (Central Processing Unit), also known as the processor, is the electronic brain of the computer that interprets and executes all software instructions.',
+      gu: 'CPU (સેન્ટ્રલ પ્રોસેસિંગ યુનિટ), જેને પ્રોસેસર પણ કહેવાય છે, તે કમ્પ્યુટરનું ઇલેક્ટ્રોનિક મગજ છે જે તમામ સોફ્ટવેર સૂચનાઓ વાંચીને ગણતરી અને પરિણામ આપે છે.'
     },
     whatItDoes: {
-      en: 'It does all math calculations, coordinates other hardware parts, and tells every program what to do billions of times per second.',
+      en: 'It does all math calculations, coordinates other hardware parts, and executes software instructions billions of times per second.',
       gu: 'તે તમામ ગાણિતિક ગણતરીઓ કરે છે, અન્ય સાધનોને નિયંત્રિત કરે છે અને સેકન્ડમાં અબજો સૂચનાઓનું પાલન કરે છે.'
     },
     whyItMatters: {
@@ -432,21 +432,21 @@ export const HARDWARE_DEVICES: HardwareDevice[] = [
       gu: 'કમ્પ્યુટર કેટલું ઝડપી કામ કરશે તેનો મુખ્ય આધાર CPU (પ્રોસેસર) ની ક્ષમતા પર રહેલો છે.'
     },
     howItWorks: {
-      en: 'It continuously performs the Fetch-Decode-Execute cycle: fetching instructions from RAM, decoding what they mean, and executing them with logic gates.',
-      gu: 'તે ફેચ-ડીકોડ-એક્ઝિક્યુટ ચક્ર ચલાવે છે: RAM માંથી સૂચના મેળવે છે, તેનો અર્થ સમજે છે અને ગાણિતિક યુનિટ દ્વારા પરિણામ લાવે છે.'
+      en: 'Operating at microscopic nanometer scales (3nm to 7nm), billions of silicon gates perform the Fetch-Decode-Execute cycle at clock frequencies above 4 GHz.',
+      gu: 'તે ફેચ-ડીકોડ-એક્ઝિક્યુટ ચક્ર ચલાવે છે: RAM માંથી સૂચના મેળવે છે, તેનો અર્થ સમજે છે અને અબજો સિલિકોન ગેટ્સ દ્વારા ગણતરી કરીને પરિણામ લાવે છે.'
     },
     types: [
       {
-        name: { en: 'Multi-Core CPUs (4, 8, 16 Cores)', gu: 'મલ્ટી-કોર પ્રોસેસર (4, 8, 16 કોર)' },
-        description: { en: 'Processors with multiple independent calculation engines working in parallel.', gu: 'એક જ ચિપમાં એકસાથે અનેક ગણતરીઓ કરતા મલ્ટીપલ કોર્સ.' }
+        name: { en: 'Intel Core Series (i3, i5, i7, i9)', gu: 'Intel Core સીરીઝ (i3, i5, i7, i9)' },
+        description: { en: 'Leading desktop & laptop processor family using hybrid Performance & Efficient cores.', gu: 'દુનિયાભરમાં સૌથી વધુ વપરાતી ઇન્ટેલ કંપનીની પ્રોસેસર સીરીઝ.' }
       },
       {
-        name: { en: 'Desktop CPUs', gu: 'ડેસ્કટોપ પ્રોસેસર્સ' },
-        description: { en: 'Higher power consumption, high clock speeds (up to 5.5+ GHz), requiring cooling fans.', gu: 'વધુ પાવર અને ઊંચી સ્પીડ આપતા ડેસ્કટોપ પ્રોસેસર.' }
+        name: { en: 'AMD Ryzen Series (Ryzen 3, 5, 7, 9)', gu: 'AMD Ryzen સીરીઝ (Ryzen 3, 5, 7, 9)' },
+        description: { en: 'Renowned for high multi-threaded performance, 3D V-Cache, and gaming prowess.', gu: 'ગેમિંગ અને મલ્ટીટાસ્કિંગ માટે જાણીતી એએમડી રાઇઝન સીરીઝ.' }
       },
       {
-        name: { en: 'Mobile / Laptop CPUs', gu: 'લેપટોપ પ્રોસેસર્સ' },
-        description: { en: 'Energy-efficient designs tuned to save battery and generate less heat.', gu: 'ઓછી વીજળી વાપરી બેટરી બચાવવા માટે બનેલા પ્રોસેસર.' }
+        name: { en: 'ARM Processors (Apple Silicon M-Series, Mobile)', gu: 'ARM પ્રોસેસર્સ (Apple M-Series, ફોન પ્રોસેસર)' },
+        description: { en: 'Ultra low-power RISC architecture dominating phones and modern MacBooks.', gu: 'ઓછી બેટરીમાં ઊંચી સ્પીડ આપતા આધુનિક સ્માર્ટફોન અને લેપટોપ પ્રોસેસર્સ.' }
       },
       {
         name: { en: 'CPUs with Integrated Graphics (iGPU)', gu: 'ઇન્ટિગ્રેટેડ ગ્રાફિક્સ વાળા CPU' },
@@ -455,15 +455,15 @@ export const HARDWARE_DEVICES: HardwareDevice[] = [
     ],
     commonUses: {
       en: ['Running Windows OS and everyday software', 'Gaming calculation logic, artificial intelligence, and physics', 'Compiling programming code and scientific simulations'],
-      gu: ['વિન્ડોઝ અને તમામ સોફ્ટવેર ચલાવવા', 'ગેમિંગ અને સાયન્ટિફિક ગણતરીઓ કરવા', 'કોડિંગ અને આર્ટિફિશિયલ ઇન્ટેલિજન્સ પ્રોસેસિંગ']
+      gu: ['વિન્ડોઝ અને તમામ સોફ્ટવેર ચલાવવા', 'ગેમિંગ અને સાયન્ટિફિક ગણતરીઓ કરવા', 'કોડિંગ, વિડીયો એડિટિંગ અને એનિમેશન']
     },
     realLifeAnalogy: {
       en: 'The CPU is like the master head chef in a busy kitchen: reading the order ticket, telling assistants what to prepare, and directing the entire restaurant!',
       gu: 'CPU એ રસોડાના મુખ્ય શેફ જેવું છે: તે ઓર્ડર વાંચે છે, કઈ સામગ્રી ક્યાંથી લેવી અને કઈ વાનગી ક્યારે બનાવવી તે બધાને નિર્દેશ આપે છે!'
     },
     rememberThis: {
-      en: 'CPU stands for Central Processing Unit and IS commonly called the processor. CPU and Processor refer to the EXACT SAME physical hardware chip!',
-      gu: 'CPU અને Processor એ બંને એક જ સાધન છે! CPU તેનું અંગ્રેજી ટૂંકું નામ છે અને Processor તેનો સામાન્ય વ્યવહારિક શબ્દ છે.'
+      en: 'CPU and Processor are the EXACT SAME hardware chip! "CPU" is the technical acronym and "Processor" is the common everyday name.',
+      gu: 'યાદ રાખો: CPU અને પ્રોસેસર એ બંને એક જ સાધન છે! વધુ કોર્સ વિડીયો એડિટિંગમાં મદદ કરે છે અને વધુ GHz સ્પીડ ગેમિંગને સ્મૂધ બનાવે છે!'
     },
     didYouKnow: {
       en: 'A modern desktop CPU contains over 10 to 20 BILLION transistors, each so small that tens of thousands could fit on the tip of a single human hair!',
@@ -476,77 +476,6 @@ export const HARDWARE_DEVICES: HardwareDevice[] = [
     limitations: {
       en: ['Generates high heat and requires a dedicated heatsink cooler', 'More expensive to replace than peripheral hardware', 'Requires compatible motherboard socket'],
       gu: ['ખૂબ ગરમ થાય છે જેથી કુલર ફેન અનિવાર્ય છે', 'મોંઘો પાર્ટ છે', 'ચોક્કસ મધરબોર્ડ સોકેટની જરૂર પડે છે']
-    },
-    relationshipNote: {
-      en: 'Relationship: "CPU" and "Processor" are two names for the same core chip. The next card explores the processor silicon microarchitecture and socket details.',
-      gu: 'સ્પષ્ટતા: "CPU" અને "પ્રોસેસર" બંને એક જ ચિપના બે નામ છે. આગળનું કાર્ડ પ્રોસેસરના સિલિકોન આર્કિટેક્ચર અને સોકેટ્સની વધુ વિગતો સમજાવે છે.'
-    }
-  },
-
-  {
-    id: 'processor',
-    name: { en: 'Processor (CPU Architecture)', gu: 'પ્રોસેસર (સિલિકોન આર્કિટેક્ચર)' },
-    fullForm: { en: 'Microprocessor / Central Processor', gu: 'માઇક્રોપ્રોસેસર (Microprocessor)' },
-    category: ['internal'],
-    image: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80',
-    fallbackSvgType: 'processor',
-    shortDefinition: {
-      en: 'The processor is the silicon integrated circuit (IC) chip that houses the CPU cores, cache memory, and memory controller.',
-      gu: 'પ્રોસેસર એ સિલિકોન સેમિકન્ડક્ટર ચિપ છે, જેમાં CPU કોર્સ, હાઈ-સ્પીડ કેશ મેમરી અને કંટ્રોલર્સ એકસાથે ફીટ હોય છે.'
-    },
-    whatItDoes: {
-      en: 'It coordinates clock frequency (GHz), processes instruction sets (x86_64 or ARM), and shifts data between cache layers (L1, L2, L3).',
-      gu: 'તે ગીગાહર્ટ્ઝ (GHz) સ્પીડમાં કામ કરે છે અને L1, L2, L3 કેશ મેમરી દ્વારા ડેટા પ્રોસેસ કરે છે.'
-    },
-    whyItMatters: {
-      en: 'Understanding processor clock speed and core count helps you choose the right PC for gaming, office work, or creative video editing.',
-      gu: 'પ્રોસેસરની સ્પીડ (GHz) અને કોર (Cores) સમજવાથી નવું કમ્પ્યુટર લેતી વખતે સાચો નિર્ણય લઈ શકાય છે.'
-    },
-    howItWorks: {
-      en: 'Operating at microscopic nanometer scales (3nm to 7nm), billions of silicon gates switch electrical signals to calculate 1s and 0s at clock frequencies above 4 GHz.',
-      gu: 'નેનોમીટર (nm) સાઈઝના સિલિકોન ગેટ્સ અબજો વખત ચાલુ-બંધ થઈને 0 અને 1 બાઈનરી કોડ પર પ્રોગ્રામ્સ રન કરે છે.'
-    },
-    types: [
-      {
-        name: { en: 'Intel Core Series (i3, i5, i7, i9)', gu: 'Intel Core સીરીઝ (i3, i5, i7, i9)' },
-        description: { en: 'Leading desktop & laptop processor family using hybrid Performance & Efficient cores.', gu: 'દુનિયાભરમાં સૌથી વધુ વપરાતી ઇન્ટેલ કંપનીની પ્રોસેસર સીરીઝ.' }
-      },
-      {
-        name: { en: 'AMD Ryzen Series (Ryzen 3, 5, 7, 9)', gu: 'AMD Ryzen સીરીઝ (Ryzen 3, 5, 7, 9)' },
-        description: { en: 'Highly competitive processors renowned for high multi-threaded performance and 3D V-Cache.', gu: 'ગેમિંગ અને મલ્ટીટાસ્કિંગ માટે જાણીતી એએમડી રાઇઝન સીરીઝ.' }
-      },
-      {
-        name: { en: 'ARM Processors (Apple Silicon M-series, Snapdragon)', gu: 'ARM પ્રોસેસર્સ (Apple M-Series, ફોન પ્રોસેસર)' },
-        description: { en: 'Ultra low-power RISC architecture dominating phones and modern MacBooks.', gu: 'ઓછી બેટરીમાં ઊંચી સ્પીડ આપતા આધુનિક સ્માર્ટફોન અને લેપટોપ પ્રોસેસર્સ.' }
-      }
-    ],
-    commonUses: {
-      en: ['Executing multi-threaded rendering tasks in Blender and Premiere', 'High-FPS competitive esports PC gaming', 'Machine learning and virtualization'],
-      gu: ['3D એનિમેશન અને વિડીયો રેન્ડરિંગ', 'હાઈ-સ્પીડ ગેમિંગ', 'મશીન લર્નિંગ અને ડેટા સાયન્સ']
-    },
-    realLifeAnalogy: {
-      en: 'Think of clock speed (GHz) as how fast a runner can sprint, and core count as how many runners are on your relay team working together!',
-      gu: 'ક્લોક સ્પીડ (GHz) એટલે દોડવીર કેટલી ઝડપે દોડે છે, અને કોર (Cores) એટલે ટીમમાં કેટલા દોડવીરો સાથે કામ કરી રહ્યા છે!'
-    },
-    rememberThis: {
-      en: 'CPU and Processor are synonymous. A higher core count is great for multitasking & video rendering, while higher single-core clock speed is king for gaming!',
-      gu: 'યાદ રાખો: CPU અને પ્રોસેસર એક જ છે. વધુ કોર્સ વિડીયો એડિટિંગમાં મદદ કરે છે અને વધુ GHz સ્પીડ ગેમિંગને સ્મૂધ બનાવે છે!'
-    },
-    didYouKnow: {
-      en: 'The thermal paste applied between the processor and heatsink fills microscopic air gaps so heat transfers away 100 times better!',
-      gu: 'પ્રોસેસરની ઉપર લગાવવામાં આવતી થર્મલ પેસ્ટ (Thermal Paste) હવાના સૂક્ષ્મ છિદ્રો ભરીને ગરમીને પંખા સુધી ખેંચી લે છે!'
-    },
-    advantages: {
-      en: ['Unmatched mathematical precision and software compatibility', 'Scalable from 15W laptop chips to 250W desktop powerhouses', 'Advanced hardware security instructions built directly into silicon'],
-      gu: ['તમામ પ્રકારના સોફ્ટવેર સાથે 100% સુસંગત', 'ઓછી વીજળીથી લઈ હાઈ-પાવર સુધી ઉપલબ્ધ', 'સિલિકોન લેવલ પર સુરક્ષા']
-    },
-    limitations: {
-      en: ['Generates extreme heat requiring liquid or tower air cooling', 'Cannot be easily upgraded on laptops (soldered BGA)', 'High-end processors consume substantial electric power'],
-      gu: ['ખૂબ ગરમી ઉત્પન્ન કરે છે', 'લેપટોપમાં પ્રોસેસર બદલી શકાતું નથી (સોલ્ડર હોય છે)', 'વધુ પાવર વાપરે છે']
-    },
-    relationshipNote: {
-      en: 'Identity Note: You may see "CPU" and "Processor" used interchangeably across tech sites. They represent the same Central Processing Unit.',
-      gu: 'મહત્વની નોંધ: ટેકનોલોજીની દુનિયામાં "CPU" અને "Processor" બંને શબ્દો એકબીજાની જગ્યાએ વપરાય છે કારણ કે તે બંને એક જ સાધન છે.'
     }
   },
 

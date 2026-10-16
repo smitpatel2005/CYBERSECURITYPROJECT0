@@ -6,7 +6,7 @@ cd /d "%~dp0"
 
 echo ==========================================================
 echo   Pushing CyberShield Project to GitHub Repository
-echo   https://github.com/smitpatel2005/CYBERSECURITYPROJECT.git
+echo   https://github.com/smitpatel2005/CYBERSECURITYPROJECT0.git
 echo ==========================================================
 echo.
 

@@ -94,8 +94,8 @@ export const HardwareLearningView: React.FC = () => {
 
           <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
             {language === 'gu'
-              ? 'કમ્પ્યુટરના તમામ 11 મુખ્ય હાર્ડવેર સાધનો (RAM, SSD, HDD, CPU, Motherboard, SMPS, Monitor, Mouse, Keyboard, Cabinet) ની સંપૂર્ણ સમજણ ગુજરાતી અને અંગ્રેજીમાં મેળવો.'
-              : 'Explore all 11 foundational computer hardware components with crystal-clear explanations, real-world analogies, component types, and bilingual English-Gujarati learning.'}
+              ? 'કમ્પ્યુટરના તમામ 10 મુખ્ય હાર્ડવેર સાધનો (RAM, SSD, HDD, CPU, Motherboard, SMPS, Monitor, Mouse, Keyboard, Cabinet) ની સંપૂર્ણ સમજણ ગુજરાતી અને અંગ્રેજીમાં મેળવો.'
+              : 'Explore all 10 foundational computer hardware components with crystal-clear explanations, real-world analogies, component types, and bilingual English-Gujarati learning.'}
           </p>
 
           {/* Quick Metrics Bar */}
@@ -108,7 +108,7 @@ export const HardwareLearningView: React.FC = () => {
                 <p className="text-[11px] text-slate-400 font-medium">
                   {language === 'gu' ? 'કુલ સાધનો' : 'Total Devices'}
                 </p>
-                <p className="text-base font-bold text-white">11 Components</p>
+                <p className="text-base font-bold text-white">10 Components</p>
               </div>
             </div>
 
@@ -132,7 +132,7 @@ export const HardwareLearningView: React.FC = () => {
                 <p className="text-[11px] text-slate-400 font-medium">
                   {language === 'gu' ? 'મુખ્ય પ્રોસેસિંગ' : 'Core Processing'}
                 </p>
-                <p className="text-base font-bold text-white">CPU / Processor</p>
+                <p className="text-base font-bold text-white">CPU (Processor)</p>
               </div>
             </div>
 
@@ -151,30 +151,6 @@ export const HardwareLearningView: React.FC = () => {
         </div>
       </div>
 
-      {/* CPU & Processor Relationship Clarification Banner */}
-      <div className="bg-gradient-to-r from-cyan-950/40 via-slate-900 to-indigo-950/40 border border-cyan-500/30 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 shadow-lg">
-        <div className="p-2 rounded-xl bg-cyan-500/20 text-cyan-400 shrink-0 mt-0.5 border border-cyan-500/40">
-          <Info className="w-5 h-5" />
-        </div>
-        <div className="flex-1">
-          <h4 className="text-sm font-bold text-white flex items-center gap-2">
-            <span>
-              {language === 'gu'
-                ? 'મહત્વની સ્પષ્ટતા: CPU અને Processor વચ્ચેનો સંબંધ'
-                : 'Key Distinction: CPU & Processor Relationship'}
-            </span>
-            <span className="px-2 py-0.2 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-semibold border border-cyan-500/30">
-              {language === 'gu' ? 'એક જ સાધન' : 'Same Physical Component'}
-            </span>
-          </h4>
-          <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-            {language === 'gu'
-              ? 'CPU એટલે "સેન્ટ્રલ પ્રોસેસિંગ યુનિટ" અને તે જ કમ્પ્યુટરનું "પ્રોસેસર" છે. આ બંને બે અલગ હાર્ડવેર પાર્ટ્સ નથી! વિદ્યાર્થીઓની સરળતા માટે અમે CPU ની ભૂમિકા અને પ્રોસેસરની સિલિકોન આર્કિટેક્ચર બંને વિગતવાર સમજાવેલ છે.'
-              : 'CPU stands for Central Processing Unit and IS the computer processor. They are not two separate competing components! In our learning lab, both are provided with specialized learning cards to distinguish functional execution from silicon microarchitecture.'}
-          </p>
-        </div>
-      </div>
-
       {/* Main Tabs Navigation */}
       <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
         <button
@@ -186,7 +162,7 @@ export const HardwareLearningView: React.FC = () => {
           }`}
         >
           <Layers className="w-4 h-4" />
-          <span>{language === 'gu' ? 'બધા હાર્ડવેર સાધનો (11)' : 'All Hardware Devices (11)'}</span>
+          <span>{language === 'gu' ? `બધા હાર્ડવેર સાધનો (${HARDWARE_DEVICES.length})` : `All Hardware Devices (${HARDWARE_DEVICES.length})`}</span>
         </button>
 
         <button
@@ -246,7 +222,7 @@ export const HardwareLearningView: React.FC = () => {
             {/* Results count */}
             <div className="text-xs text-slate-400 self-center">
               {language === 'gu' ? 'દર્શાવેલ પરિણામો:' : 'Showing:'}{' '}
-              <strong className="text-white font-mono">{filteredDevices.length}</strong> / 11
+              <strong className="text-white font-mono">{filteredDevices.length}</strong> / {HARDWARE_DEVICES.length}
             </div>
           </div>
 

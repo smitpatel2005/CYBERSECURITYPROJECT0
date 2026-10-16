@@ -33,10 +33,10 @@ export const DashboardView: React.FC = () => {
       id: 'hardware-learning',
       title: language === 'gu' ? 'કમ્પ્યુટર હાર્ડવેર લર્નિંગ લેબ' : 'Computer Hardware Learning Lab',
       description: language === 'gu'
-        ? 'કમ્પ્યુટરના 11 મુખ્ય હાર્ડવેર સાધનો (RAM, SSD, HDD, CPU, SMPS, મોનિટર...) ની વિગતવાર સમજણ, સિસ્ટમ ફ્લો અને નોલેજ ક્વિઝ.'
-        : 'Explore 11 foundational PC hardware components (RAM, SSD, HDD, CPU, SMPS, Motherboard, etc.) with real-world analogies, system flow simulator, and mastery quiz.',
+        ? 'કમ્પ્યુટરના 10 મુખ્ય હાર્ડવેર સાધનો (RAM, SSD, HDD, CPU, SMPS, મોનિટર...) ની વિગતવાર સમજણ, સિસ્ટમ ફ્લો અને નોલેજ ક્વિઝ.'
+        : 'Explore 10 foundational PC hardware components (RAM, SSD, HDD, CPU, SMPS, Motherboard, etc.) with real-world analogies, system flow simulator, and mastery quiz.',
       icon: Cpu,
-      badge: language === 'gu' ? '11 સાધનો' : '11 Devices',
+      badge: language === 'gu' ? '10 સાધનો' : '10 Devices',
       gradient: 'from-cyan-600/20 to-teal-600/20',
       statValue: language === 'gu' ? 'દ્વિભાષી લેબ (EN/GU)' : 'Bilingual Lab (EN/GU)'
     },
