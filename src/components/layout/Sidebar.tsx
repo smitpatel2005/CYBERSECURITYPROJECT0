@@ -160,7 +160,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
           </div>
 
           <div className="text-[10px] text-center font-mono text-slate-600">
-            IANT Exhibition Edition • 2026
+            CyberShield Security Suite • 2026
           </div>
         </div>
       </aside>

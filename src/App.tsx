@@ -40,12 +40,9 @@ const AppContent: React.FC = () => {
 
           {/* Standard Footer */}
           <footer className="border-t border-slate-900 bg-slate-950/80 py-6 px-6 text-center text-xs text-slate-500 font-mono">
-            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="max-w-7xl mx-auto flex items-center justify-center">
               <div>
                 CyberShield Security Suite © 2026 • Smart Cyber Security Awareness & Digital Defense System
-              </div>
-              <div className="text-cyan-500/80">
-                IANT Anniversary Live Technical Exhibition
               </div>
             </div>
           </footer>

@@ -70,7 +70,7 @@ export const DashboardView: React.FC = () => {
         <div className="relative z-10 space-y-4 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>IANT Anniversary Live Project Exhibition 2026</span>
+            <span>Cyber Security & Hardware Learning Lab • 2026</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
