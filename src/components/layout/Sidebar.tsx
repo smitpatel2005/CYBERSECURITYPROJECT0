@@ -5,7 +5,8 @@ import {
   KeyRound, 
   Layers, 
   ChevronRight,
-  Cpu 
+  Cpu,
+  MessageSquareWarning
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { AppModule } from '../../types';
@@ -41,7 +42,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
 
     // Cybersecurity Suite
     { id: 'url-inspector', label: language === 'gu' ? 'URL અને વેબ સુરક્ષા' : 'URL & Web Safety', icon: Globe, section: 'Cybersecurity Suite', badge: 'Heuristic' },
-    { id: 'password-checker', label: language === 'gu' ? 'પાસવર્ડ એનાલાઇઝર' : 'Password Analyzer', icon: KeyRound, section: 'Cybersecurity Suite', badge: 'Entropy' }
+    { id: 'password-checker', label: language === 'gu' ? 'પાસવર્ડ એનાલાઇઝર' : 'Password Analyzer', icon: KeyRound, section: 'Cybersecurity Suite', badge: 'Entropy' },
+    { id: 'message-detector', label: language === 'gu' ? 'મેસેજ & ફ્રોડ ડિટેક્ટર' : 'Message & Scam Shield', icon: MessageSquareWarning, section: 'Cybersecurity Suite', badge: 'Smishing' }
   ];
 
   const handleSelect = (id: AppModule) => {
@@ -59,7 +61,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
 
   const overallProgress = Math.min(
     100,
-    Math.round(Math.min(100, (stats.urlInspections + stats.passwordAudits) * 10))
+    Math.round(Math.min(100, (stats.urlInspections + stats.passwordAudits + stats.messageScans) * 8))
   );
 
   return (
@@ -155,7 +157,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
             </div>
             <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 pt-1">
               <span>Audits Completed:</span>
-              <span className="text-cyan-400 font-bold">{stats.urlInspections + stats.passwordAudits}</span>
+              <span className="text-cyan-400 font-bold">{stats.urlInspections + stats.passwordAudits + stats.messageScans}</span>
             </div>
           </div>
 

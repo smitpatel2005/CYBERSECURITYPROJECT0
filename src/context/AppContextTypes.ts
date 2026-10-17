@@ -21,6 +21,8 @@ export interface AppContextType {
   incrementUrlInspections: () => void;
   passwordAuditsCount: number;
   incrementPasswordAudits: () => void;
+  messageScansCount: number;
+  incrementMessageScans: () => void;
   
   // Presenter Info
   presenterInfo: PresenterInfo;
@@ -30,5 +32,6 @@ export interface AppContextType {
   getOverallStats: () => {
     urlInspections: number;
     passwordAudits: number;
+    messageScans: number;
   };
 }

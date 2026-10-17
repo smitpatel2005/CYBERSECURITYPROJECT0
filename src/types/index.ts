@@ -2,6 +2,7 @@ export type AppModule =
   | 'dashboard'
   | 'url-inspector'
   | 'password-checker'
+  | 'message-detector'
   | 'hardware-learning';
 
 export type Language = 'en' | 'gu';
@@ -105,4 +106,58 @@ export interface PasswordAnalysis {
   timeToCrack: string;
   suggestions: string[];
   positivePoints: string[];
+}
+
+// Message / SMS / Phishing Fraud Analysis
+export type MessageRiskLevel = 'SAFE' | 'SUSPICIOUS' | 'DANGEROUS';
+
+export type ScamCategory = 
+  | 'electricity_bill_scam'
+  | 'bank_kyc_phishing'
+  | 'lottery_reward_fraud'
+  | 'part_time_job_scam'
+  | 'courier_delivery_scam'
+  | 'apk_malware_remote'
+  | 'urgent_threat_extortion'
+  | 'legitimate_transactional'
+  | 'general_suspicious'
+  | 'benign_general';
+
+export interface ExtractedUrlInfo {
+  url: string;
+  domain: string;
+  isShortener: boolean;
+  isIpAddress: boolean;
+  isSuspiciousTld: boolean;
+  hasApkDownload: boolean;
+  isSpoofedBrand: boolean;
+}
+
+export interface MessageHeuristicRule {
+  id: string;
+  name: { en: string; gu: string };
+  triggered: boolean;
+  severity: 'info' | 'low' | 'medium' | 'high' | 'critical' | 'safe';
+  riskScore: number;
+  explanation: { en: string; gu: string };
+  evidence?: string;
+}
+
+export interface MessageFraudAnalysis {
+  rawMessage: string;
+  charCount: number;
+  wordCount: number;
+  riskScore: number; // 0 - 100
+  riskLevel: MessageRiskLevel;
+  category: ScamCategory;
+  categoryTitle: { en: string; gu: string };
+  summary: { en: string; gu: string };
+  extractedUrls: ExtractedUrlInfo[];
+  extractedPhones: string[];
+  heuristicRules: MessageHeuristicRule[];
+  detectedUrgencyWords: string[];
+  detectedFinancialWords: string[];
+  detectedCredentialWords: string[];
+  detectedRemoteApps: string[];
+  actionAdvice: { en: string[]; gu: string[] };
 }

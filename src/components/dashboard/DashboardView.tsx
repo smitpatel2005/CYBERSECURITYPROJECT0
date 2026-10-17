@@ -6,7 +6,8 @@ import {
   Sparkles, 
   ChevronRight, 
   Globe,
-  Cpu 
+  Cpu,
+  MessageSquareWarning
 } from 'lucide-react';
 
 export const DashboardView: React.FC = () => {
@@ -39,6 +40,17 @@ export const DashboardView: React.FC = () => {
       statValue: language === 'gu' ? 'દ્વિભાષી લેબ (EN/GU)' : 'Bilingual Lab (EN/GU)'
     },
     {
+      id: 'message-detector',
+      title: language === 'gu' ? 'SMS & મેસેજ ફ્રોડ ડિટેક્ટર' : 'SMS & Message Fraud Detector',
+      description: language === 'gu'
+        ? 'મોબાઇલ કે લેપટોપમાં આવેલા શંકાસ્પદ મેસેજ (લાઈટ બિલ કટ, બેંક KYC, KBC લોટરી, ફેક APK) નું રિયલ-ટાઇમ સ્કેનિંગ.'
+        : 'Empirical heuristic scanner analyzing mobile & PC messages for deceptive links, artificial panic threats, lottery traps, and APK Trojans.',
+      icon: MessageSquareWarning,
+      badge: `${stats.messageScans} Scans`,
+      gradient: 'from-rose-600/20 to-red-600/20',
+      statValue: language === 'gu' ? 'સ્કેમ & ફિશિંગ શીલ્ડ' : 'Smishing & Fraud Shield'
+    },
+    {
       id: 'url-inspector',
       title: language === 'gu' ? 'વેબસાઇટ સેફ્ટી અને URL ઇન્સ્પેક્ટર' : 'Website Safety & URL Inspector',
       description: language === 'gu'
@@ -58,7 +70,7 @@ export const DashboardView: React.FC = () => {
       icon: KeyRound,
       badge: `${stats.passwordAudits} Tests`,
       gradient: 'from-amber-600/20 to-orange-600/20',
-      statValue: 'Entropy + Diceware'
+      statValue: 'CSPRNG Entropy Engine'
     }
   ];
 
@@ -91,6 +103,14 @@ export const DashboardView: React.FC = () => {
             </button>
 
             <button
+              onClick={() => setActiveModule('message-detector')}
+              className="px-5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-rose-300 font-semibold text-xs sm:text-sm border border-rose-500/30 transition-colors flex items-center gap-2 shadow-lg shadow-rose-950/20"
+            >
+              <MessageSquareWarning className="w-4 h-4 text-rose-400" />
+              <span>{language === 'gu' ? 'મેસેજ સ્કેમ ચેક' : 'Scan Message Fraud'}</span>
+            </button>
+
+            <button
               onClick={() => setActiveModule('url-inspector')}
               className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm border border-slate-800 transition-colors flex items-center gap-2"
             >
@@ -110,7 +130,21 @@ export const DashboardView: React.FC = () => {
       </div>
 
       {/* Real State Metrics Ribbon */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-lg space-y-1">
+          <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">Message Fraud Scans</span>
+          <div className="text-2xl font-mono font-bold text-white flex items-center gap-2">
+            <span className="text-rose-400">{stats.messageScans}</span>
+            <span className="text-xs text-slate-500">audited</span>
+          </div>
+          <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-2">
+            <div
+              className="bg-rose-500 h-full rounded-full transition-all"
+              style={{ width: `${Math.min(100, stats.messageScans * 20)}%` }}
+            />
+          </div>
+        </div>
+
         <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-lg space-y-1">
           <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">URL Safety Audits</span>
           <div className="text-2xl font-mono font-bold text-white flex items-center gap-2">
@@ -140,24 +174,13 @@ export const DashboardView: React.FC = () => {
         </div>
 
         <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-lg space-y-1">
-          <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">Heuristic Engine</span>
+          <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">Heuristic Defense Engine</span>
           <div className="text-2xl font-mono font-bold text-white flex items-center gap-2">
-            <span className="text-blue-400">5 Rules</span>
+            <span className="text-blue-400">7 Rules</span>
             <span className="text-xs text-slate-500">active</span>
           </div>
           <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-2">
             <div className="bg-blue-500 h-full rounded-full w-full" />
-          </div>
-        </div>
-
-        <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-lg space-y-1">
-          <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">Passphrase Studio</span>
-          <div className="text-2xl font-mono font-bold text-white flex items-center gap-2">
-            <span className="text-emerald-400">Diceware</span>
-            <span className="text-xs text-slate-500">CSPRNG</span>
-          </div>
-          <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-2">
-            <div className="bg-emerald-500 h-full rounded-full w-full" />
           </div>
         </div>
       </div>
@@ -170,11 +193,11 @@ export const DashboardView: React.FC = () => {
             {language === 'gu' ? 'કાર્યરત હાર્ડવેર અને સાયબર સુરક્ષા મોડ્યુલ્સ' : 'Operational Hardware & Cybersecurity Modules'}
           </h3>
           <span className="text-xs text-slate-400 font-mono">
-            {language === 'gu' ? '3 સક્રિય મોડ્યુલ્સ' : '3 Active Modules'}
+            {language === 'gu' ? '4 સક્રિય મોડ્યુલ્સ' : '4 Active Modules'}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {moduleCards.map((card) => {
             const Icon = card.icon;
 

@@ -8,6 +8,7 @@ import { Breadcrumbs } from './components/layout/Breadcrumbs';
 import { DashboardView } from './components/dashboard/DashboardView';
 import { UrlSafetyInspector } from './components/cyber/UrlSafetyInspector';
 import { PasswordChecker } from './components/auth/PasswordChecker';
+import { MessageFraudDetector } from './components/cyber/MessageFraudDetector';
 import { HardwareLearningView } from './components/hardware/HardwareLearningView';
 import { ExhibitionModeView } from './components/exhibition/ExhibitionModeView';
 
@@ -33,6 +34,7 @@ const AppContent: React.FC = () => {
 
           <div className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
             {activeModule === 'dashboard' && <DashboardView />}
+            {activeModule === 'message-detector' && <MessageFraudDetector />}
             {activeModule === 'hardware-learning' && <HardwareLearningView />}
             {activeModule === 'url-inspector' && <UrlSafetyInspector />}
             {activeModule === 'password-checker' && <PasswordChecker />}

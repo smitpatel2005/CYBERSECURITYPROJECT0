@@ -7,7 +7,8 @@ const MODULE_NAMES: Record<AppModule, { en: string; gu: string }> = {
   'dashboard': { en: 'Overview Dashboard', gu: 'મુખ્ય ડેશબોર્ડ' },
   'hardware-learning': { en: 'Computer Hardware Learning Lab', gu: 'કમ્પ્યુટર હાર્ડવેર લર્નિંગ લેબ' },
   'url-inspector': { en: 'Website Safety & URL Inspector', gu: 'વેબસાઇટ સેફ્ટી અને URL ઇન્સ્પેક્ટર' },
-  'password-checker': { en: 'Password Strength & Entropy Analyzer', gu: 'પાસવર્ડ સ્ટ્રેન્થ અને એન્ટ્રોપી એનાલાઇઝર' }
+  'password-checker': { en: 'Password Strength & Entropy Analyzer', gu: 'પાસવર્ડ સ્ટ્રેન્થ અને એન્ટ્રોપી એનાલાઇઝર' },
+  'message-detector': { en: 'SMS & Message Fraud Detector', gu: 'SMS અને મેસેજ ફ્રોડ ડિટેક્ટર' }
 };
 
 export const Breadcrumbs: React.FC = () => {

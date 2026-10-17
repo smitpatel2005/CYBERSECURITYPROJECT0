@@ -38,6 +38,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const [urlInspectionsCount, setUrlInspectionsCount] = useState<number>(initialData.urlInspectionsCount || 0);
   const [passwordAuditsCount, setPasswordAuditsCount] = useState<number>(initialData.passwordAuditsCount || 0);
+  const [messageScansCount, setMessageScansCount] = useState<number>(initialData.messageScansCount || 0);
   const [presenterInfo, setPresenterInfo] = useState<PresenterInfo>(initialData.presenterInfo || defaultPresenter);
 
   // Sync state to localStorage safely
@@ -99,6 +100,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     persistState({ passwordAuditsCount: next });
   };
 
+  const incrementMessageScans = () => {
+    const next = messageScansCount + 1;
+    setMessageScansCount(next);
+    persistState({ messageScansCount: next });
+  };
+
   const updatePresenterInfo = (info: Partial<PresenterInfo>) => {
     const next = { ...presenterInfo, ...info };
     setPresenterInfo(next);
@@ -120,7 +127,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const getOverallStats = () => {
     return {
       urlInspections: urlInspectionsCount,
-      passwordAudits: passwordAuditsCount
+      passwordAudits: passwordAuditsCount,
+      messageScans: messageScansCount
     };
   };
 
@@ -145,6 +153,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         incrementUrlInspections,
         passwordAuditsCount,
         incrementPasswordAudits,
+        messageScansCount,
+        incrementMessageScans,
         presenterInfo,
         updatePresenterInfo,
         getOverallStats
