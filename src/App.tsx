@@ -10,6 +10,7 @@ import { UrlSafetyInspector } from './components/cyber/UrlSafetyInspector';
 import { PasswordChecker } from './components/auth/PasswordChecker';
 import { MessageFraudDetector } from './components/cyber/MessageFraudDetector';
 import { HardwareLearningView } from './components/hardware/HardwareLearningView';
+import { HardwareTroubleshootingView } from './components/hardware/HardwareTroubleshootingView';
 import { ExhibitionModeView } from './components/exhibition/ExhibitionModeView';
 
 const AppContent: React.FC = () => {
@@ -34,6 +35,7 @@ const AppContent: React.FC = () => {
 
           <div className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
             {activeModule === 'dashboard' && <DashboardView />}
+            {activeModule === 'hardware-troubleshooting' && <HardwareTroubleshootingView />}
             {activeModule === 'message-detector' && <MessageFraudDetector />}
             {activeModule === 'hardware-learning' && <HardwareLearningView />}
             {activeModule === 'url-inspector' && <UrlSafetyInspector />}
@@ -44,7 +46,7 @@ const AppContent: React.FC = () => {
           <footer className="border-t border-slate-900 bg-slate-950/80 py-6 px-6 text-center text-xs text-slate-500 font-mono">
             <div className="max-w-7xl mx-auto flex items-center justify-center">
               <div>
-                CyberShield Security Suite © 2026 • Smart Cyber Security Awareness & Digital Defense System
+                Cyber Security & Hardware TroubleShooting © 2026 • Smart Cyber Security Awareness & Hardware Diagnostics System
               </div>
             </div>
           </footer>

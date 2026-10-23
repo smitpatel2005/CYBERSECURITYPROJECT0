@@ -6,7 +6,8 @@ import {
   Layers, 
   ChevronRight,
   Cpu,
-  MessageSquareWarning
+  MessageSquareWarning,
+  Wrench
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { AppModule } from '../../types';
@@ -38,6 +39,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
       icon: Cpu, 
       section: 'Hardware Lab', 
       badge: language === 'gu' ? '10 સાધનો' : '10 Devices' 
+    },
+    { 
+      id: 'hardware-troubleshooting', 
+      label: language === 'gu' ? 'હાર્ડવેર ટ્રબલશૂટિંગ' : 'Hardware Troubleshooting', 
+      icon: Wrench, 
+      section: 'Hardware Lab', 
+      badge: language === 'gu' ? 'ડાયગ્નોસ્ટિક' : 'Diagnostics' 
     },
 
     // Cybersecurity Suite
@@ -162,7 +170,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
           </div>
 
           <div className="text-[10px] text-center font-mono text-slate-600">
-            CyberShield Security Suite • 2026
+            Cyber Security & Hardware TroubleShooting • 2026
           </div>
         </div>
       </aside>

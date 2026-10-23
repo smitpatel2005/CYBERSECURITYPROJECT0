@@ -7,7 +7,8 @@ import {
   ChevronRight, 
   Globe,
   Cpu,
-  MessageSquareWarning
+  MessageSquareWarning,
+  Wrench
 } from 'lucide-react';
 
 export const DashboardView: React.FC = () => {
@@ -38,6 +39,17 @@ export const DashboardView: React.FC = () => {
       badge: language === 'gu' ? '10 સાધનો' : '10 Devices',
       gradient: 'from-cyan-600/20 to-teal-600/20',
       statValue: language === 'gu' ? 'દ્વિભાષી લેબ (EN/GU)' : 'Bilingual Lab (EN/GU)'
+    },
+    {
+      id: 'hardware-troubleshooting',
+      title: language === 'gu' ? 'કમ્પ્યુટર હાર્ડવેર ટ્રબલશૂટિંગ' : 'Hardware Troubleshooting & Repairs',
+      description: language === 'gu'
+        ? 'No Display, No Power, Beep Codes, BSOD અને હાર્ડવેર પાર્ટ્સની ખામીઓનું સ્ટેપ-બાય-સ્ટેપ પ્રેક્ટિકલ નિદાન.'
+        : 'Interactive diagnostic engine & symptom solver for PC issues: No Display, Dead SMPS, RAM Beeps, Overheating, and component replacements.',
+      icon: Wrench,
+      badge: language === 'gu' ? 'ડાયગ્નોસ્ટિક લેબ' : 'Diagnostics',
+      gradient: 'from-amber-600/20 to-orange-600/20',
+      statValue: language === 'gu' ? '૧૪+ ફોલ્ટ સોલ્યુશન' : '14+ Fault Solutions'
     },
     {
       id: 'message-detector',
@@ -82,23 +94,31 @@ export const DashboardView: React.FC = () => {
         <div className="relative z-10 space-y-4 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Cyber Security & Hardware Learning Lab • 2026</span>
+            <span>Cyber Security & Hardware TroubleShooting • 2026</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-            CyberShield <span className="text-cyan-400">Security Suite</span>
+            Cyber Security <span className="text-cyan-400">& Hardware TroubleShooting</span>
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Smart Cyber Security Awareness & Digital Defense System. Built for live technical exhibition, providing 100% genuine client-side entropy evaluation, heuristic domain parsing, and defensive system hardening baselines.
+            Smart Cyber Security Awareness & Hardware Troubleshooting System. Built for real-world diagnostics, empirical threat defense, hardware fault isolation, and defensive system hardening baselines.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <button
-              onClick={() => setActiveModule('hardware-learning')}
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-xl shadow-cyan-950/50 transition-all border border-cyan-400/30"
+              onClick={() => setActiveModule('hardware-troubleshooting')}
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-xl shadow-amber-950/50 transition-all border border-amber-400/30"
             >
-              <Cpu className="w-4 h-4 text-cyan-200" />
+              <Wrench className="w-4 h-4 text-amber-200" />
+              <span>{language === 'gu' ? 'હાર્ડવેર ટ્રબલશૂટિંગ' : 'Hardware Troubleshooting'}</span>
+            </button>
+
+            <button
+              onClick={() => setActiveModule('hardware-learning')}
+              className="px-5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-cyan-300 font-semibold text-xs sm:text-sm border border-cyan-500/30 transition-colors flex items-center gap-2 shadow-lg shadow-cyan-950/20"
+            >
+              <Cpu className="w-4 h-4 text-cyan-400" />
               <span>{language === 'gu' ? 'કમ્પ્યુટર હાર્ડવેર લેબ' : 'Computer Hardware Lab'}</span>
             </button>
 
@@ -193,11 +213,11 @@ export const DashboardView: React.FC = () => {
             {language === 'gu' ? 'કાર્યરત હાર્ડવેર અને સાયબર સુરક્ષા મોડ્યુલ્સ' : 'Operational Hardware & Cybersecurity Modules'}
           </h3>
           <span className="text-xs text-slate-400 font-mono">
-            {language === 'gu' ? '4 સક્રિય મોડ્યુલ્સ' : '4 Active Modules'}
+            {language === 'gu' ? '૫ સક્રિય મોડ્યુલ્સ' : '5 Active Modules'}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {moduleCards.map((card) => {
             const Icon = card.icon;
 

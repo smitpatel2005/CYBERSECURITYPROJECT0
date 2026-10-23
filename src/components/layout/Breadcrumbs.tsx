@@ -8,7 +8,8 @@ const MODULE_NAMES: Record<AppModule, { en: string; gu: string }> = {
   'hardware-learning': { en: 'Computer Hardware Learning Lab', gu: 'કમ્પ્યુટર હાર્ડવેર લર્નિંગ લેબ' },
   'url-inspector': { en: 'Website Safety & URL Inspector', gu: 'વેબસાઇટ સેફ્ટી અને URL ઇન્સ્પેક્ટર' },
   'password-checker': { en: 'Password Strength & Entropy Analyzer', gu: 'પાસવર્ડ સ્ટ્રેન્થ અને એન્ટ્રોપી એનાલાઇઝર' },
-  'message-detector': { en: 'SMS & Message Fraud Detector', gu: 'SMS અને મેસેજ ફ્રોડ ડિટેક્ટર' }
+  'message-detector': { en: 'SMS & Message Fraud Detector', gu: 'SMS અને મેસેજ ફ્રોડ ડિટેક્ટર' },
+  'hardware-troubleshooting': { en: 'Hardware Troubleshooting & Diagnostics', gu: 'હાર્ડવેર ટ્રબલશૂટિંગ અને ડાયગ્નોસ્ટિક' }
 };
 
 export const Breadcrumbs: React.FC = () => {
@@ -21,7 +22,7 @@ export const Breadcrumbs: React.FC = () => {
         className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
       >
         <Home className="w-3.5 h-3.5 text-cyan-500" />
-        <span>CyberShield</span>
+        <span>Cyber Security & Hardware TroubleShooting</span>
       </button>
 
       {activeModule !== 'dashboard' && (

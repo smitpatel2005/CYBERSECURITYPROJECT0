@@ -3,7 +3,8 @@ export type AppModule =
   | 'url-inspector'
   | 'password-checker'
   | 'message-detector'
-  | 'hardware-learning';
+  | 'hardware-learning'
+  | 'hardware-troubleshooting';
 
 export type Language = 'en' | 'gu';
 
@@ -161,3 +162,28 @@ export interface MessageFraudAnalysis {
   detectedRemoteApps: string[];
   actionAdvice: { en: string[]; gu: string[] };
 }
+
+// Hardware Troubleshooting Types
+export type TroubleshootingSeverity = 'critical' | 'high' | 'medium' | 'low';
+export type TroubleshootingCategory = 'all' | 'display' | 'power' | 'ram' | 'storage' | 'cpu' | 'motherboard' | 'network' | 'peripherals';
+
+export interface TroubleshootingStep {
+  step: number;
+  title: { en: string; gu: string };
+  instruction: { en: string; gu: string };
+  tip?: { en: string; gu: string };
+}
+
+export interface TroubleshootingIssue {
+  id: string;
+  title: { en: string; gu: string };
+  symptom: { en: string; gu: string };
+  category: TroubleshootingCategory;
+  component: string;
+  severity: TroubleshootingSeverity;
+  beepCode?: string;
+  likelyCauses: { en: string[]; gu: string[] };
+  diagnosticSteps: TroubleshootingStep[];
+  preventionTip: { en: string; gu: string };
+}
+

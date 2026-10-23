@@ -54,14 +54,14 @@ export const Navbar: React.FC<NavbarProps> = ({ sidebarOpen, setSidebarOpen }) =
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-                  CyberShield <span className="text-cyan-400">Security Suite</span>
+                  Cyber Security <span className="text-cyan-400">& Hardware TroubleShooting</span>
                 </span>
                 <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-700/50 text-cyan-300">
-                  <TerminalSquare className="w-3 h-3" /> v2.6 Exhibition
+                  <TerminalSquare className="w-3 h-3" /> v2.6
                 </span>
               </div>
               <p className="hidden md:block text-[11px] text-slate-400 truncate max-w-sm">
-                Smart Cyber Security Awareness & Digital Defense System
+                Smart Cyber Security Awareness & Hardware Troubleshooting System
               </p>
             </div>
           </button>
