@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { AppModule } from '../../types';
 import { 
@@ -8,8 +8,10 @@ import {
   Globe,
   Cpu,
   MessageSquareWarning,
-  Wrench
+  Wrench,
+  Database
 } from 'lucide-react';
+import { RealThreatDataHubModal } from '../common/RealThreatDataHubModal';
 
 export const DashboardView: React.FC = () => {
   const { 
@@ -19,6 +21,7 @@ export const DashboardView: React.FC = () => {
   } = useApp();
 
   const stats = getOverallStats();
+  const [showDataHub, setShowDataHub] = useState<boolean>(false);
 
   const moduleCards: {
     id: AppModule;
@@ -145,6 +148,14 @@ export const DashboardView: React.FC = () => {
               <KeyRound className="w-4 h-4 text-amber-400" />
               <span>{language === 'gu' ? 'પાસવર્ડ એનાલાઇઝર' : 'Password Analyzer'}</span>
             </button>
+
+            <button
+              onClick={() => setShowDataHub(true)}
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-950 via-slate-900 to-blue-950 hover:bg-slate-800 text-cyan-300 font-semibold text-xs sm:text-sm border border-cyan-500/40 transition-colors flex items-center gap-2 shadow-lg shadow-cyan-950/30"
+            >
+              <Database className="w-4 h-4 text-cyan-400" />
+              <span>{language === 'gu' ? 'રીયલ ડેટા બેંક' : 'Real Threat Data Bank'}</span>
+            </button>
           </div>
         </div>
       </div>
@@ -258,6 +269,11 @@ export const DashboardView: React.FC = () => {
           })}
         </div>
       </div>
+
+      <RealThreatDataHubModal
+        isOpen={showDataHub}
+        onClose={() => setShowDataHub(false)}
+      />
     </div>
   );
 };

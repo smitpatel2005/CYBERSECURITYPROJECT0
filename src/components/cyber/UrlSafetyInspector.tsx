@@ -9,13 +9,17 @@ import {
   ShieldCheck, 
   Info,
   ArrowRight,
-  RotateCcw
+  RotateCcw,
+  Database,
+  Sparkles
 } from 'lucide-react';
+import { RealThreatDataHubModal } from '../common/RealThreatDataHubModal';
 
 export const UrlSafetyInspector: React.FC = () => {
-  const { incrementUrlInspections } = useApp();
+  const { incrementUrlInspections, language } = useApp();
   const [inputUrl, setInputUrl] = useState<string>('');
   const [result, setResult] = useState<UrlAnalysisResult | null>(null);
+  const [showDataHub, setShowDataHub] = useState<boolean>(false);
 
   const sampleUrls = [
     { label: 'Deceptive Bank Login', url: 'http://state-bankk-secure-alert.com/login-verify?user=8942' },
@@ -256,8 +260,25 @@ export const UrlSafetyInspector: React.FC = () => {
               {sample.label}
             </button>
           ))}
+          <button
+            onClick={() => setShowDataHub(true)}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-gradient-to-r from-cyan-950 to-blue-950 hover:from-cyan-900 hover:to-blue-900 text-cyan-300 border border-cyan-500/50 font-mono font-bold transition-all flex items-center gap-1 shadow-sm"
+          >
+            <Database className="w-3 h-3 text-cyan-400" />
+            <span>{language === 'gu' ? 'રીયલ ડેટા બેંક (લાઇબ્રેરી)' : 'Real Threat Data Bank'}</span>
+          </button>
         </div>
       </div>
+
+      <RealThreatDataHubModal
+        isOpen={showDataHub}
+        onClose={() => setShowDataHub(false)}
+        defaultTab="urls"
+        onSelectUrl={(url) => {
+          setInputUrl(url);
+          analyzeUrl(url);
+        }}
+      />
 
       {/* Analysis Result Display */}
       {result && (

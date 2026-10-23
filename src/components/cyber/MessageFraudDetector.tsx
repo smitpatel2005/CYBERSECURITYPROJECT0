@@ -13,8 +13,10 @@ import {
   Info,
   Copy,
   ExternalLink,
-  PhoneCall
+  PhoneCall,
+  Database
 } from 'lucide-react';
+import { RealThreatDataHubModal } from '../common/RealThreatDataHubModal';
 
 interface PresetSample {
   id: string;
@@ -65,6 +67,7 @@ export const MessageFraudDetector: React.FC = () => {
   const [inputMessage, setInputMessage] = useState<string>('');
   const [result, setResult] = useState<MessageFraudAnalysis | null>(null);
   const [copiedTip, setCopiedTip] = useState<boolean>(false);
+  const [showDataHub, setShowDataHub] = useState<boolean>(false);
 
   const analyzeMessage = (textToTest: string) => {
     const clean = textToTest.trim();
@@ -185,8 +188,25 @@ export const MessageFraudDetector: React.FC = () => {
               {sample.label[language]}
             </button>
           ))}
+          <button
+            onClick={() => setShowDataHub(true)}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-gradient-to-r from-cyan-950 to-blue-950 hover:from-cyan-900 hover:to-blue-900 text-cyan-300 border border-cyan-500/50 font-mono font-bold transition-all flex items-center gap-1 shadow-sm"
+          >
+            <Database className="w-3 h-3 text-cyan-400" />
+            <span>{language === 'gu' ? 'રીયલ ડેટા બેંક (લાઇબ્રેરી)' : 'Real Threat Data Bank'}</span>
+          </button>
         </div>
       </div>
+
+      <RealThreatDataHubModal
+        isOpen={showDataHub}
+        onClose={() => setShowDataHub(false)}
+        defaultTab="messages"
+        onSelectMessage={(text) => {
+          setInputMessage(text);
+          analyzeMessage(text);
+        }}
+      />
 
       {/* Analysis Result Display matching UrlSafetyInspector layout */}
       {result && (
